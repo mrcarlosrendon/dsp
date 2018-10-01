@@ -1,0 +1,19 @@
+a = [0, 1, 0]
+b = [0, .5, 1, .5, 0]
+
+def convolve(x, h):
+    out_length = len(x) + len(h) - 1
+    out_signal = []
+    
+    for i in range(0, out_length):
+        sum = 0
+        for j in range(0, len(h) - 1):
+            sum = sum + h[j] * x[i-j]
+        out_signal.append(sum)
+
+    return out_singal
+
+
+print(convolve(b, a))
+        
+
